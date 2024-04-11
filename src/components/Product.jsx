@@ -27,17 +27,16 @@ const Product = ({ product }) => {
 
 export default Product;
 
-const Wrapper = styled.article`
+const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   padding: 10px 20px;
-  color: var(--third-color);
   text-transform: capitalize;
-  border-radius: var(--radius);
   font-weight: bold;
-  transition: all 0.5s;
-  max-width: 440px;
-  border: 1px solid #d3d3d3;
+  color: var(--third-color);
+  border-radius: var(--radius);
+  transition: var(--transition);
+  border: var(--border);
   &:hover {
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     transform: translateY(-5px);

@@ -1,12 +1,12 @@
-import { Products, Filter, HeroSection } from "../components";
+import { Products, HeroSection, Aside } from "../components";
 import styled from "styled-components";
 
 const ProductsPage = () => {
   return (
     <Wrapper>
       <HeroSection />
-      <div className="container">
-        <Filter />
+      <div className="products-section">
+        <Aside />
         <Products />
       </div>
     </Wrapper>
@@ -16,7 +16,7 @@ const ProductsPage = () => {
 export default ProductsPage;
 
 const Wrapper = styled.section`
-  .container {
+  .products-section {
     display: flex;
   }
 `;

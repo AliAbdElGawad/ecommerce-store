@@ -120,6 +120,10 @@ export const StoreProvider = ({ children }) => {
       console.log(error.message);
     }
   };
+  
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   const fetchSingleProduct = async (id) => {
     dispatch({ type: "LOADING_SINGLE" });
@@ -131,10 +135,6 @@ export const StoreProvider = ({ children }) => {
       console.log(error);
     }
   };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
 
   useEffect(() => {
     dispatch({ type: "FILTER_PRODUCTS" });

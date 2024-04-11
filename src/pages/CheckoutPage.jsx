@@ -19,6 +19,7 @@ const Checkout = () => {
             <h4>X{item.quantity}</h4>
             <h5>${item.itemTotalPrice.toFixed(2)}</h5>
           </div>
+          <div className="amount-control"></div>
         </div>
       ))}
     </Wrapper>
@@ -33,6 +34,7 @@ const Wrapper = styled.section`
     width: 100%;
     height: 200px;
     padding: 20px;
+    gap: 20px;
     border: var(--border);
     .img {
       img {
@@ -41,6 +43,12 @@ const Wrapper = styled.section`
     }
     .info {
       text-align: end;
+      margin-left: auto;
+    }
+    .amount-control {
+      width: 33%;
+      height: 100%;
+      background-color: red;
     }
   }
 `;

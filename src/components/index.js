@@ -8,10 +8,10 @@ import Products from "./Products";
 import Sort from "./Sort";
 import CartItems from "./CartItems";
 import Button from "./Button";
-import Checkout from "./Checkout";
 import HeroSection from "./HeroSection";
 import AddToCart from "./AddToCart";
 import Loader from "./Loader";
+import Aside from "./Aside";
 
 export {
   Header,
@@ -24,8 +24,8 @@ export {
   Sort,
   CartItems,
   Button,
-  Checkout,
   HeroSection,
   AddToCart,
   Loader,
+  Aside
 };

@@ -25,9 +25,13 @@ export default Products;
 const Wrapper = styled.section`
   min-height: 100vh;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
   .products {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    width: 100%;
     gap: 16px;
     padding: 20px 10px;
   }
