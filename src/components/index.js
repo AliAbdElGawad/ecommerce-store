@@ -11,6 +11,7 @@ import Button from "./Button";
 import HeroSection from "./HeroSection";
 import AddToCart from "./AddToCart";
 import Loader from "./Loader";
+import Footer from "./Footer";
 import Aside from "./Aside";
 
 export {
@@ -27,5 +28,6 @@ export {
   HeroSection,
   AddToCart,
   Loader,
-  Aside
+  Aside,
+  Footer,
 };

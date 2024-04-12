@@ -1,4 +1,4 @@
-import { Header, Landing, Sidebar } from "./components";
+import { Header, Landing, Sidebar, Footer } from "./components";
 import { ProductsPage, About, SingleProductPage, CheckoutPage } from "./pages";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -15,6 +15,7 @@ const App = () => {
           <Route path="/products/:id" element={<SingleProductPage />} />
           <Route path="/Checkout" element={<CheckoutPage />} />
         </Routes>
+        <Footer />
       </Router>
     </main>
   );

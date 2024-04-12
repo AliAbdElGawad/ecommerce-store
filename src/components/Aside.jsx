@@ -16,7 +16,7 @@ const Aside = () => {
 const Wrapper = styled.aside`
   padding: 20px 10px;
   border-right: 1px solid var(--third-color);
-  max-width: 250px;
+  width: 250px;
   .content {
     display: flex;
     flex-direction: column;

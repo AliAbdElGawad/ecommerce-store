@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { styled } from "styled-components";
 const HeroSection = ({ title, product }) => {
   return (
-    <Wrapper /* className="flex-center"*/>
+    <Wrapper>
       <h1>
         {title ? `${title} ` : <Link to="/products">Products </Link>}
         {product && `/ ${product}`}
