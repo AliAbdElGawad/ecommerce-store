@@ -44,25 +44,6 @@ const Wrapper = styled.header`
   height: 60px;
   .nav {
     margin-left: auto;
-    ul {
-      display: flex;
-      list-style: none;
-      @media (max-width: 767px) {
-        display: none;
-      }
-      li {
-        margin-right: 1rem;
-        a {
-          text-decoration: none;
-          transition: 0.5s;
-          font-weight: bold;
-          color: inherit;
-          &:hover {
-            color: grey;
-          }
-        }
-      }
-    }
     .bars {
       display: none;
       cursor: pointer;
@@ -75,13 +56,20 @@ const Wrapper = styled.header`
     }
   }
   .cart {
-    padding: 5px 15px;
     display: flex;
+    padding: 5px;
+    justify-content: space-between;
     align-items: center;
+    width: 60px;
+    height: 30px;
     gap: 5px;
-    border: 1px solid white;
-    border-radius: 3px;
+    border: var(--border);
+    border-color: var(--third-color);
+    border-radius: var(--radius);
+    color: var(--third-color);
     cursor: pointer;
-    position: relative;
+    span {
+      margin: 0 auto;
+    }
   }
 `;

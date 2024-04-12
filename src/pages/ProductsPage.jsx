@@ -4,7 +4,7 @@ import styled from "styled-components";
 const ProductsPage = () => {
   return (
     <Wrapper>
-      <HeroSection />
+      <HeroSection title={"Products"} />
       <div className="products-section">
         <Aside />
         <Products />

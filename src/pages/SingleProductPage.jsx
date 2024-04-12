@@ -42,7 +42,7 @@ const Wrapper = styled.div`
     gap: 20px;
     padding: 40px 30px;
     .img {
-      width: 25%;
+      width: 33%;
       img {
         width: 100%;
       }

@@ -10,11 +10,10 @@ const Footer = () => {
 
 const Wrapper = styled.footer`
   display: flex;
-  bottom: 0;
   width: 100%;
   justify-content: center;
   align-items: center;
-  height: 5dvh;
+  height: 60px;
   background-color: var(--primary-color);
 `;
 

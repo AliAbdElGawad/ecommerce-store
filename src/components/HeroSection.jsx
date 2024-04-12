@@ -4,8 +4,9 @@ const HeroSection = ({ title, product }) => {
   return (
     <Wrapper>
       <h1>
+        <Link to="/">Home </Link>/{" "}
         {title ? `${title} ` : <Link to="/products">Products </Link>}
-        {product && `/ ${product}`}
+        {product ? `/ ${product}` : ""}
       </h1>
     </Wrapper>
   );

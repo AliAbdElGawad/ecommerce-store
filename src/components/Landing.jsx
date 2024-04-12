@@ -31,8 +31,7 @@ const Wrapper = styled.section`
   height: calc(100dvh - 60px);
   padding-top: 15px;
   text-align: center;
-  color: var(--text-color);
-  background-color: var(--primary-color);
+  color: var(--primary-color);
   gap: 20px;
   @media (max-width: 767px) {
     flex-direction: column;

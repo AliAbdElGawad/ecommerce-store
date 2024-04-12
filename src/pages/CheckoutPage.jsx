@@ -29,6 +29,7 @@ const Checkout = () => {
 };
 
 const Wrapper = styled.section`
+  min-height: 100dvh;
   @media (max-width: 767px) {
     font-size: 12px;
   }
@@ -46,7 +47,7 @@ const Wrapper = styled.section`
       justify-content: center;
       width: 15%;
       img {
-        width: 70%;
+        width: 60%;
       }
     }
     .info {

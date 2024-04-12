@@ -11,6 +11,10 @@ export const NavLinks = [
     path: "/products",
     text: "Products",
   },
+  {
+    path: "/checkout",
+    text: "Checkout",
+  },
 ];
 
 export const productsURL = "https://fakestoreapi.com";
