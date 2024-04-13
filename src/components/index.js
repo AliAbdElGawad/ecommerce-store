@@ -13,6 +13,7 @@ import AddToCart from "./AddToCart";
 import Loader from "./Loader";
 import Footer from "./Footer";
 import Aside from "./Aside";
+import CheckoutItems from "./CheckoutItems";
 
 export {
   Header,
@@ -30,4 +31,5 @@ export {
   Loader,
   Aside,
   Footer,
+  CheckoutItems
 };

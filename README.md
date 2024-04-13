@@ -1,8 +1,21 @@
-# React + Vite
+# E-Commerce React Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is an e-commerce web application built with React.js, Context API, Styled Components, and react-router-dom.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Context API**: Used for managing global state such as user authentication, cart items, and product data.
+- **Styled Components**: Used for styling components with CSS-in-JS, providing a more maintainable and scalable styling approach.
+- **React Router DOM**: Used for routing and navigation within the application.
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js and npm (or yarn) installed on your machine.
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/AliAbdElGawad/ecommerce-store.git

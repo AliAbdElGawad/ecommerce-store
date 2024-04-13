@@ -1,4 +1,4 @@
-import { HeroSection, AddToCart } from "../components";
+import { HeroSection, CheckoutItems } from "../components";
 import { useCart } from "../contexts/CartContext";
 import styled from "styled-components";
 
@@ -9,20 +9,7 @@ const Checkout = () => {
     <Wrapper>
       <HeroSection title="Checkout" />
       {cart.map((item) => (
-        <div className="item container" key={item.id}>
-          <div className="img">
-            <img src={item.image} alt={item.title} />
-          </div>
-          <div className="info">
-            <h2>{item.title}</h2>
-            <h3>${item.price}</h3>
-            <h3>X{item.quantity}</h3>
-            <h4>${item.itemTotalPrice.toFixed(2)}</h4>
-          </div>
-          <div className="amount-control">
-            <AddToCart item={item} />
-          </div>
-        </div>
+        <CheckoutItems key={item.id} {...item} />
       ))}
     </Wrapper>
   );
