@@ -15,6 +15,7 @@ import Footer from "./Footer";
 import Aside from "./Aside";
 import CheckoutItems from "./CheckoutItems";
 import FeaturedProducts from "./FeaturedProducts";
+import Featured from "./Featured";
 
 export {
   Header,
@@ -34,4 +35,5 @@ export {
   Footer,
   CheckoutItems,
   FeaturedProducts,
+  Featured,
 };

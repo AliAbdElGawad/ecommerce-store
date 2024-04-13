@@ -55,11 +55,8 @@ const Wrapper = styled.div`
     button {
       height: 50px;
       width: 200px;
-      cursor: pointer;
-      border: 2px solid #252525;
+      border: 1px solid #252525;
       border-radius: 30px;
-      font-weight: bold;
-      transition: var(--transition);
       &:hover {
         color: var(--third-color);
         background-color: var(--primary-color);
