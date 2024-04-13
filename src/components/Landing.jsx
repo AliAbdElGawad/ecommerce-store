@@ -1,6 +1,7 @@
-import styled from "styled-components";
-import heroImg from "../assets/images/undraw_web_shopping_re_owap.svg";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
+import { Button } from "../components";
+import heroImg from "../assets/images/undraw_web_shopping_re_owap.svg";
 
 const Landing = () => {
   return (
@@ -12,7 +13,7 @@ const Landing = () => {
           Voluptates dolorum eaque voluptatibus natus accusantium fuga
         </p>
         <Link to="/products">
-          <button type="button">Shop now</button>
+          <Button>Shop now</Button>
         </Link>
       </div>
       <div className="img">
@@ -44,12 +45,12 @@ const Wrapper = styled.section`
     flex: 1;
     h1 {
       font-size: 3em;
-      padding-bottom: 10px;
+      padding-bottom: 1rem;
     }
     p {
       line-height: 1.4;
       color: #7d8285;
-      padding-bottom: 10px;
+      padding-bottom: 1rem;
     }
     button {
       height: 50px;
@@ -58,10 +59,10 @@ const Wrapper = styled.section`
       border: 2px solid #252525;
       border-radius: 30px;
       font-weight: bold;
-      transition: all 0.3s ease;
+      transition: var(--transition);
       &:hover {
-        color: var(--text-color);
-        background-color: rgba(69, 136, 176, 0.2);
+        color: var(--third-color);
+        background-color: var(--primary-color);
       }
     }
   }

@@ -16,6 +16,7 @@ const ProductsPage = () => {
 export default ProductsPage;
 
 const Wrapper = styled.section`
+  min-height: 100dvh;
   .products-section {
     display: flex;
   }

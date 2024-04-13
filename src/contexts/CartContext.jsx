@@ -55,6 +55,30 @@ const reducer = (state, action) => {
       return { ...localData };
     }
   }
+  if (action.type === "TOGGLE_CART_ITEM_AMOUNT") {
+    const { value, id } = action.payload;
+    const tempCart = state.cart.map((item) => {
+      if (item.id === id) {
+        if (value === "inc") {
+          let newAmount = item.amount + 1;
+          if (newAmount > item.max) {
+            newAmount = item.max;
+          }
+          return { ...item, amount: newAmount };
+        }
+        if (value === "dec") {
+          let newAmount = item.amount - 1;
+          if (newAmount < 1) {
+            newAmount = 1;
+          }
+          return { ...item, amount: newAmount };
+        }
+      }
+      return item;
+    });
+    return { ...state, cart: tempCart };
+  }
+
   // return State BY Default
   return state;
 };
@@ -66,15 +90,34 @@ export const CartProvider = ({ children }) => {
   const addToCart = (item) => {
     dispatch({ type: "ADD_TO_CART", payload: item });
   };
+  const removeFromCart = (id) => {
+    dispatch({ type: "REMOVE_FROM_CART", payload: id });
+  };
+  const clearCart = () => {
+    dispatch({ type: "RESET_CART" });
+  };
+  const updateItemInCart = (value, id) => {
+    dispatch({ type: "TOGGLE_CART_ITEM_AMOUNT", payload: { value, id } });
+  };
   useEffect(() => {
     dispatch({ type: "GET_FROM_LOCAL" });
   }, []);
   useEffect(() => {
-    dispatch({ type: "CALC_TOTAL" });
     dispatch({ type: "UPDATE_LOCAL" });
+    dispatch({ type: "CALC_TOTAL" });
   }, [state.cart]);
   return (
-    <store.Provider value={{ ...state, addToCart }}>{children}</store.Provider>
+    <store.Provider
+      value={{
+        ...state,
+        addToCart,
+        clearCart,
+        removeFromCart,
+        updateItemInCart,
+      }}
+    >
+      {children}
+    </store.Provider>
   );
 };
 
