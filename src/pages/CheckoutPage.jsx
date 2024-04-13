@@ -5,6 +5,19 @@ import styled from "styled-components";
 const Checkout = () => {
   const { cart } = useCart();
 
+  if (cart.length === 0) {
+    return (
+      <Wrapper>
+        <div className="empty-cart">
+          <h1>
+            Your Your Cart is Empty! Please add some items to your cart before
+            checking out.
+          </h1>
+        </div>
+      </Wrapper>
+    );
+  }
+
   return (
     <Wrapper>
       <HeroSection title="Checkout" />
@@ -20,32 +33,11 @@ const Wrapper = styled.section`
   @media (max-width: 767px) {
     font-size: 12px;
   }
-  .item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    height: 200px;
-    padding: 20px;
-    gap: 20px;
-    border: var(--border);
-    .img {
-      display: flex;
-      justify-content: center;
-      width: 15%;
-      img {
-        width: 60%;
-      }
-    }
-    .info {
-      text-align: end;
-      width: 40%;
-      h2 {
-        text-align: start;
-      }
-    }
-    .amount-control {
-      width: 33%;
+  .empty-cart {
+    margin: 100px;
+    h1 {
+      font-size: 36px;
+      text-align: center;
     }
   }
 `;

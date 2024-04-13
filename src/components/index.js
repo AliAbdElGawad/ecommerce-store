@@ -14,6 +14,7 @@ import Loader from "./Loader";
 import Footer from "./Footer";
 import Aside from "./Aside";
 import CheckoutItems from "./CheckoutItems";
+import FeaturedProducts from "./FeaturedProducts";
 
 export {
   Header,
@@ -31,5 +32,6 @@ export {
   Loader,
   Aside,
   Footer,
-  CheckoutItems
+  CheckoutItems,
+  FeaturedProducts,
 };

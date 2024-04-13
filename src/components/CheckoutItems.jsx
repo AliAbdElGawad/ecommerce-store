@@ -1,5 +1,7 @@
-import { AddToCart } from "../components";
+import { AddToCart, Button } from "../components";
 import styled from "styled-components";
+import { FaTrashAlt } from "react-icons/fa";
+import { useCart } from "../contexts/CartContext";
 
 const CheckoutItems = ({
   id,
@@ -9,6 +11,8 @@ const CheckoutItems = ({
   quantity,
   itemTotalPrice,
 }) => {
+  const { removeFromCart } = useCart();
+
   return (
     <Wrapper>
       <div className="img">
@@ -22,6 +26,14 @@ const CheckoutItems = ({
       </div>
       <div className="amount-control">
         <AddToCart item={{ id, title, image, price, quantity }} />
+        <Button
+          bgColor={"red"}
+          onClick={() => {
+            removeFromCart(id);
+          }}
+        >
+          <FaTrashAlt />
+        </Button>
       </div>
     </Wrapper>
   );
@@ -53,6 +65,9 @@ const Wrapper = styled.div`
   }
   .amount-control {
     width: 33%;
+    button {
+      margin-top: 10px;
+    }
   }
 `;
 

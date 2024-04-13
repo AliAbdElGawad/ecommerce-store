@@ -9,7 +9,9 @@ const initialValue = {
 };
 
 const reducer = (state, action) => {
-  // Actions //
+  // { Actions }
+
+  // Add ITEMS to Cart
   if (action.type === "ADD_TO_CART") {
     const newItem = action.payload;
     const tempCart = [...state.cart];
@@ -29,6 +31,7 @@ const reducer = (state, action) => {
       };
     }
   }
+  // Calculation of the Total Price and Items in Cart
   if (action.type === "CALC_TOTAL") {
     const { totalItems, totalPrice } = state.cart.reduce(
       (total, cartItems) => {
@@ -41,10 +44,7 @@ const reducer = (state, action) => {
     );
     return { ...state, totalPrice, totalItems };
   }
-  // Reset the Cart //
-  if (action.type === "RESET_CART") {
-    return { initialValue };
-  }
+  // Loaclstorage control
   if (action.type === "UPDATE_LOCAL") {
     localStorage.setItem("items", JSON.stringify(state));
     return { ...state };
@@ -55,6 +55,7 @@ const reducer = (state, action) => {
       return { ...localData };
     }
   }
+  // Change amount of an Item in the Shopping Cart
   if (action.type === "TOGGLE_CART_ITEM_AMOUNT") {
     const { value, id } = action.payload;
     const tempCart = state.cart.map((item) => {
@@ -78,7 +79,15 @@ const reducer = (state, action) => {
     });
     return { ...state, cart: tempCart };
   }
-
+  // Remove item form cart
+  if (action.type === "REMOVE_FROM_CART") {
+    const filteredItems = state.cart.filter((i) => i.id !== action.payload);
+    return { ...state, cart: filteredItems };
+  }
+  // Reset the Cart //
+  if (action.type === "RESET_CART") {
+    return { initialValue };
+  }
   // return State BY Default
   return state;
 };
