@@ -27,6 +27,26 @@ const Wrapper = styled.div`
   padding: 1rem 0.5rem;
   border-radius: var(--radius);
   border: var(--border);
+  position: relative;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  &:hover {
+    transform: translateY(-5px) scale(1.02);
+  }
+  &::after {
+    content: "Hot sale";
+    position: absolute;
+    top: 5px;
+    right: -14px;
+    padding: 0.5rem;
+    width: 10rem;
+    background: var(--third-color);
+    color: var(--primary-color);
+    border-radius: var(--radius);
+    text-align: center;
+    font-weight: bold;
+    box-shadow: var(--shadow);
+  }
   .img {
     display: grid;
     place-items: center;

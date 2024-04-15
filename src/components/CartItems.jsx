@@ -2,50 +2,58 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { useCart } from "../contexts/CartContext";
 import { useStore } from "../contexts/StoreContext";
-import { Button } from "../components";
+import { Button, OutsideClickDetector } from "../components";
 
 const CartItems = () => {
   const { cart, totalPrice, totalItems } = useCart();
   const { isCartOpen, closeCart } = useStore();
 
+  const handleOutsideClick = () => {
+    closeCart();
+  };
+
   if (totalItems === 0) {
     return (
-      <Wrapper className={`${isCartOpen ? "open" : ""}`}>
-        <div className="empty-message">
-          Your shopping bag is empty.
-          <br /> Add some items now!
-          <Link to="/products">
-            <Button onClick={() => closeCart()}>Shop Now</Button>
-          </Link>
-        </div>
-      </Wrapper>
+      <OutsideClickDetector onOutSideClicked={handleOutsideClick}>
+        <Wrapper className={`${isCartOpen ? "open" : ""}`}>
+          <div className="empty-message">
+            Your shopping bag is empty.
+            <br /> Add some items now!
+            <Link to="/products">
+              <Button onClick={() => closeCart()}>Shop Now</Button>
+            </Link>
+          </div>
+        </Wrapper>
+      </OutsideClickDetector>
     );
   }
 
   return (
-    <Wrapper className={`${isCartOpen ? "open" : ""}`}>
-      <ul>
-        {cart.map(({ quantity, image, price, title, itemTotalPrice, id }) => (
-          <li className="cart-item" key={id}>
-            <div className="item">
-              <div className="item-info">
-                <img src={image} alt={title} />
-                <h4>{title}</h4>
+    <OutsideClickDetector onOutSideClicked={handleOutsideClick}>
+      <Wrapper className={`${isCartOpen ? "open" : ""}`}>
+        <ul>
+          {cart.map(({ quantity, image, price, title, itemTotalPrice, id }) => (
+            <li className="cart-item" key={id}>
+              <div className="item">
+                <div className="item-info">
+                  <img src={image} alt={title} />
+                  <h4>{title}</h4>
+                </div>
+                <div className="item-amount">
+                  <p>${price}</p>
+                  <h4>X{quantity}</h4>
+                  <h5>${itemTotalPrice.toFixed(2)}</h5>
+                </div>
               </div>
-              <div className="item-amount">
-                <p>${price}</p>
-                <h4>X{quantity}</h4>
-                <h5>${itemTotalPrice.toFixed(2)}</h5>
-              </div>
-            </div>
-          </li>
-        ))}
-      </ul>
-      <p>$ {totalPrice.toFixed(2)}</p>
-      <Link to="/checkout">
-        <Button onClick={() => closeCart()}>Checkout</Button>
-      </Link>
-    </Wrapper>
+            </li>
+          ))}
+        </ul>
+        <p>$ {totalPrice.toFixed(2)}</p>
+        <Link to="/checkout">
+          <Button onClick={() => closeCart()}>Checkout</Button>
+        </Link>
+      </Wrapper>
+    </OutsideClickDetector>
   );
 };
 

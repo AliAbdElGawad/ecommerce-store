@@ -4,7 +4,7 @@ const Footer = () => {
   const date = new Date().getFullYear();
   return (
     <Wrapper>
-      <h3>&copy; 2021 - {date} Built with Love and tears. &#x2764;</h3>
+      <h3>&copy; 2021 - {date} Built with Love &#x2764; All rights reserved</h3>
     </Wrapper>
   );
 };
@@ -12,6 +12,7 @@ const Footer = () => {
 const Wrapper = styled.footer`
   display: flex;
   width: 100%;
+  text-align: center;
   justify-content: center;
   align-items: center;
   height: 60px;

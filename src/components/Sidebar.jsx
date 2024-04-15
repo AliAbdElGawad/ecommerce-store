@@ -1,14 +1,20 @@
 import styled from "styled-components";
-import { Nav } from "../components";
+import { Nav, OutsideClickDetector } from "../components";
 import { useStore } from "../contexts/StoreContext";
 
 // eslint-disable-next-line react/prop-types
 const Sidebar = () => {
-  const { isSidebarOpen } = useStore();
+  const { isSidebarOpen, closeSideBar } = useStore();
+  const handleOutsideClick = () => {
+    closeSideBar();
+  };
+
   return (
-    <Wrapper className={`${isSidebarOpen ? "opened" : ""}`}>
-      <Nav />
-    </Wrapper>
+    <OutsideClickDetector onOutSideClicked={handleOutsideClick}>
+      <Wrapper className={`${isSidebarOpen ? "opened" : ""}`}>
+        <Nav />
+      </Wrapper>
+    </OutsideClickDetector>
   );
 };
 
@@ -16,11 +22,12 @@ export default Sidebar;
 
 const Wrapper = styled.aside`
   position: fixed;
-  height: 100vh;
+  height: 100%;
   right: 0;
+  top: 0;
   width: 200px;
   background-color: var(--third-color);
-  transition: all 0.5s;
+  transition: var(--transition);
   transform: translateX(100%);
   z-index: 999;
   @media (max-width: 767px) {

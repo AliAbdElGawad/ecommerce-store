@@ -120,7 +120,7 @@ export const StoreProvider = ({ children }) => {
       console.log(error.message);
     }
   };
-  
+
   useEffect(() => {
     fetchData();
   }, []);

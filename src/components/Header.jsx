@@ -42,6 +42,7 @@ const Wrapper = styled.header`
   color: var(--text-color);
   padding: 10px;
   height: 60px;
+  z-index: 999;
   .nav {
     margin-left: auto;
     .bars {

@@ -53,7 +53,7 @@ const Wrapper = styled.div`
     justify-content: center;
     width: 15%;
     img {
-      width: 60%;
+      width: 65%;
     }
   }
   .info {

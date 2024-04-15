@@ -1,4 +1,5 @@
-import { HeroSection, CheckoutItems } from "../components";
+import { Link } from "react-router-dom";
+import { HeroSection, CheckoutItems, Button } from "../components";
 import { useCart } from "../contexts/CartContext";
 import styled from "styled-components";
 
@@ -7,14 +8,19 @@ const Checkout = () => {
 
   if (cart.length === 0) {
     return (
-      <Wrapper>
-        <div className="empty-cart">
-          <h1>
-            Your Your Cart is Empty! Please add some items to your cart before
-            checking out.
-          </h1>
+      <EmptyWrapper>
+        <h1>
+          Your Your Cart is Empty! Please add some items to your cart before
+          checking out.
+        </h1>
+        <div className="flex-center">
+          <Link to="/products">
+            <Button>
+              Go Shopping &#8594;
+            </Button>
+          </Link>
         </div>
-      </Wrapper>
+      </EmptyWrapper>
     );
   }
 
@@ -33,13 +39,14 @@ const Wrapper = styled.section`
   @media (max-width: 767px) {
     font-size: 12px;
   }
-  .empty-cart {
-    margin: 100px;
-    h1 {
-      font-size: 36px;
-      text-align: center;
-    }
-  }
 `;
 
+const EmptyWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-direction: column;
+  text-align: center;
+  min-height: 100dvh;
+`;
 export default Checkout;

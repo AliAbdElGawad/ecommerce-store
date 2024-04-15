@@ -34,7 +34,7 @@ const Wrapper = styled.div`
   .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 3rem;
+    gap: 2rem;
     padding: 2rem;
   }
 `;

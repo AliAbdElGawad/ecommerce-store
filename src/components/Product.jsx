@@ -37,9 +37,9 @@ const Wrapper = styled.div`
   border-radius: var(--radius);
   transition: var(--transition);
   border: var(--border);
+  box-shadow: var(--shadow);
   &:hover {
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    transform: translateY(-5px);
+    transform: translateY(-5px) scale(1.02);
   }
   span {
     padding-bottom: 10px;
