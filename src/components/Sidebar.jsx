@@ -1,13 +1,21 @@
 import styled from "styled-components";
 import { Nav, OutsideClickDetector } from "../components";
 import { useStore } from "../contexts/StoreContext";
+import useScrollBlock from "../hooks/useBlockScroll";
 
 // eslint-disable-next-line react/prop-types
 const Sidebar = () => {
   const { isSidebarOpen, closeSideBar } = useStore();
+  // Block scrolling when sidebar is open to prevent scroll on the page behind it.
+  const [blockScroll, allowScroll] = useScrollBlock();
   const handleOutsideClick = () => {
     closeSideBar();
   };
+  if (isSidebarOpen) {
+    blockScroll();
+  } else {
+    allowScroll();
+  }
 
   return (
     <OutsideClickDetector onOutSideClicked={handleOutsideClick}>

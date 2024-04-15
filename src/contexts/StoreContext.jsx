@@ -15,6 +15,7 @@ const initialValue = {
   sort: "default",
   filteres: {
     price: 0,
+    search: "",
     category: "all",
   },
 };
@@ -100,6 +101,13 @@ const reducer = (state, action) => {
     if (state.filteres.category !== "all") {
       tempProducts = tempProducts.filter((item) => {
         return item.category === state.filteres.category;
+      });
+    }
+    // Search
+    if (state.filteres.search !== "") {
+      const searchText = state.filteres.search.toLowerCase();
+      tempProducts = tempProducts.filter((item) => {
+        return item.title.toLowerCase().includes(searchText);
       });
     }
     return { ...state, filteredProducts: tempProducts };

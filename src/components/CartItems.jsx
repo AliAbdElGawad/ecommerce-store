@@ -4,6 +4,11 @@ import { useCart } from "../contexts/CartContext";
 import { useStore } from "../contexts/StoreContext";
 import { Button, OutsideClickDetector } from "../components";
 
+/**
+ * ! Fix toggle bug
+ * TODO: makes the layout lookes better
+ */
+
 const CartItems = () => {
   const { cart, totalPrice, totalItems } = useCart();
   const { isCartOpen, closeCart } = useStore();

@@ -1,14 +1,16 @@
 import { Featured } from "../components";
-import styled from "styled-components";
 import { useStore } from "../contexts/StoreContext";
+import styled from "styled-components";
 
 const FeaturedProducts = () => {
   const { products } = useStore();
+  const items = products.slice(0, 4);
+
   return (
     <Wrapper>
       <h1>Featured Products</h1>
       <div className="grid">
-        {products.slice(0, 4).map((product) => (
+        {items.map((product) => (
           <Featured key={product.id} product={product} />
         ))}
       </div>
@@ -19,7 +21,7 @@ const Wrapper = styled.div`
   padding: 2rem 0;
   h1 {
     text-align: center;
-    font-size: 36px;
+    font-size: 2.5em;
     padding-bottom: 2rem;
     &::after {
       content: "";

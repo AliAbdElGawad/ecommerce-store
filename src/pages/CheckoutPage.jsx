@@ -9,15 +9,11 @@ const Checkout = () => {
   if (cart.length === 0) {
     return (
       <EmptyWrapper>
-        <h1>
-          Your Your Cart is Empty! Please add some items to your cart before
-          checking out.
-        </h1>
+        <h1>Your Cart is Empty!</h1>
+        <h1>Please add some items to your cart before checking out.</h1>
         <div className="flex-center">
           <Link to="/products">
-            <Button>
-              Go Shopping &#8594;
-            </Button>
+            <Button>Go Shopping &#8594;</Button>
           </Link>
         </div>
       </EmptyWrapper>
@@ -44,9 +40,9 @@ const Wrapper = styled.section`
 const EmptyWrapper = styled.div`
   display: flex;
   justify-content: center;
-  gap: 50px;
   flex-direction: column;
-  text-align: center;
   min-height: 100dvh;
+  text-align: center;
+  gap: 50px;
 `;
 export default Checkout;

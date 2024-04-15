@@ -6,6 +6,10 @@ import { StoreProvider } from "./contexts/StoreContext";
 import { CartProvider } from "./contexts/CartContext";
 import "./index.css";
 
+/**
+ * TODO: auth0
+ */
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   // <React.StrictMode>
   // <Auth0Provider
