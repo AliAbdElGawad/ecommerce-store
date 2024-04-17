@@ -4,7 +4,7 @@ import { useStore } from "../contexts/StoreContext";
 const Filter = () => {
   /**
    * ! Don't Forget
-   * TODO: Add Search filter // Done 
+   * TODO: Add Search filter // Done
    * TODO: Make layout responsive and look better
    */
   const { filtersUpdate, filteres } = useStore();
@@ -16,6 +16,7 @@ const Filter = () => {
     const { name, value } = e.target;
     filtersUpdate({ name, value });
   };
+
   return (
     <Wrapper>
       <form onSubmit={submitHandler}>
@@ -27,14 +28,24 @@ const Filter = () => {
           value={price}
           name="price"
           step={5}
-          min={1}
+          min={0}
         />
         <br />
         <label htmlFor="search">Name:</label>
-        <input type="text" name="search" onChange={changeHandler} />
+        <input
+          placeholder="Search by Name..."
+          type="text"
+          name="search"
+          value={filteres.search}
+          onChange={changeHandler}
+        />
         <br />
         <label htmlFor="category">Category: </label>
-        <select defaultValue="all" onChange={changeHandler} name="category">
+        <select
+          onChange={changeHandler}
+          value={filteres.category}
+          name="category"
+        >
           <option value="all">All</option>
           <option value="men's clothing">Men&apos;s Clothing</option>
           <option value="jewelery">Jewelery</option>
@@ -49,8 +60,10 @@ const Filter = () => {
 export default Filter;
 
 const Wrapper = styled.div`
-  margin-bottom: 60px;
   form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
     input[type="text"] {
       appearance: none;
       border: none;

@@ -91,6 +91,18 @@ const reducer = (state, action) => {
     const { name, value } = action.payload;
     return { ...state, filteres: { ...state.filteres, [name]: value } };
   }
+  if (action.type === "RESIT_FILTERS") {
+    return {
+      ...state,
+      sort: "default",
+      filteres: {
+        ...state.filteres,
+        search: "",
+        category: "all",
+        price: state.filteres.maxPrice,
+      },
+    };
+  }
   if (action.type === "FILTER_PRODUCTS") {
     let tempProducts = state.products;
     // Price
@@ -149,7 +161,9 @@ export const StoreProvider = ({ children }) => {
     dispatch({ type: "CHANGE_SORT" });
   }, [state.products, state.sort, state.filteres]);
 
-  ////////////////////// Actions //////////////////////
+  /**
+   * * Actions
+   */
   const toggleSideBar = () => {
     dispatch({ type: "TOGGLE_SIDEBAR" });
   };
@@ -173,6 +187,9 @@ export const StoreProvider = ({ children }) => {
   const sortUpate = (value) => {
     dispatch({ type: "UPDATE_SORT", payload: value });
   };
+  const resitFilteres = () => {
+    dispatch({ type: "RESIT_FILTERS" });
+  };
 
   return (
     <store.Provider
@@ -185,6 +202,7 @@ export const StoreProvider = ({ children }) => {
         filtersUpdate,
         sortUpate,
         fetchSingleProduct,
+        resitFilteres,
       }}
     >
       {children}

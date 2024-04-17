@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { useStore } from "../contexts/StoreContext";
 
 const Sort = () => {
-  const { sortUpate } = useStore();
+  const { sortUpate, sort } = useStore();
   const changeHandler = (e) => {
     const value = e.target.value;
     sortUpate(value);
@@ -10,7 +10,7 @@ const Sort = () => {
   return (
     <Wrapper>
       <label htmlFor="category">Sort By:</label>
-      <select onChange={changeHandler} defaultValue="default" name="category">
+      <select onChange={changeHandler} value={sort} name="category">
         <option value="default">Default</option>
         <option value="a-to-z">A to Z</option>
         <option value="z-to-a">Z to A</option>

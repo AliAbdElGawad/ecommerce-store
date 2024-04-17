@@ -33,7 +33,7 @@ const Wrapper = styled.div`
   padding: 10px 20px;
   text-transform: capitalize;
   font-weight: bold;
-  max-width: 300px;
+  max-width: 450px;
   max-height: 50rem;
   color: var(--third-color);
   border-radius: var(--radius);

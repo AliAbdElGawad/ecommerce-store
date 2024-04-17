@@ -1,13 +1,21 @@
 import styled from "styled-components";
-import { Filter, Sort } from "../components";
+import { Button, Filter, Sort } from "../components";
+import { useStore } from "../contexts/StoreContext";
 
 const Aside = () => {
+  const { resitFilteres } = useStore();
+
+  const resitHandler = () => {
+    resitFilteres();
+  };
+
   return (
     <Wrapper>
       <div className="content">
         <h2>Filter by:</h2>
         <Filter />
         <Sort />
+        <Button onClick={resitHandler}>Resit</Button>
       </div>
     </Wrapper>
   );
@@ -20,6 +28,8 @@ const Wrapper = styled.aside`
   .content {
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
+    gap: 25px;
     min-height: 400px;
     position: sticky;
     top: 0;
