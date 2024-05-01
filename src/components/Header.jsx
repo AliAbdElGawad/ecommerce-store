@@ -2,12 +2,16 @@ import { CartItems, Nav } from "../components";
 import { useCart } from "../contexts/CartContext";
 import { useStore } from "../contexts/StoreContext";
 import styled from "styled-components";
+import { useAuth0 } from "@auth0/auth0-react";
 import { FaBars, FaShoppingCart } from "react-icons/fa";
 import { RxCross1 } from "react-icons/rx";
+import { CgProfile } from "react-icons/cg";
+import { RiLoginCircleLine } from "react-icons/ri";
 
 const Header = () => {
   const { isSidebarOpen, toggleSideBar, toggleCart } = useStore();
   const { totalItems } = useCart();
+  const { loginWithRedirect, logout, isAuthenticated } = useAuth0();
 
   return (
     <Wrapper className="container">
@@ -22,9 +26,18 @@ const Header = () => {
         </div>
         <Nav />
       </div>
-      <div className="cart" onClick={toggleCart}>
-        <FaShoppingCart />
-        <span>{totalItems > 0 ? totalItems : ""}</span>
+      <div className="profile-cart">
+        <div className="cart" onClick={toggleCart}>
+          <FaShoppingCart />
+          <span>{totalItems > 0 ? totalItems : ""}</span>
+        </div>
+        <div className="profile">
+          {isAuthenticated ? (
+            <RiLoginCircleLine className="icons" onClick={() => logout()} />
+          ) : (
+            <CgProfile className="icons" onClick={() => loginWithRedirect()} />
+          )}
+        </div>
       </div>
       <CartItems />
     </Wrapper>
@@ -56,21 +69,30 @@ const Wrapper = styled.header`
       }
     }
   }
-  .cart {
+  .profile-cart {
     display: flex;
     padding: 5px;
     justify-content: space-between;
     align-items: center;
-    width: 60px;
-    height: 30px;
     gap: 5px;
-    border: var(--border);
-    border-color: var(--third-color);
-    border-radius: var(--radius);
-    color: var(--third-color);
-    cursor: pointer;
-    span {
-      margin: 0 auto;
+    .profile {
+      height: 36px;
+    }
+    .cart {
+      display: flex;
+      padding: 0 5px;
+      align-items: center;
+      width: 55px;
+      height: 36px;
+      gap: 5px;
+      border: var(--border);
+      border-color: var(--third-color);
+      border-radius: var(--radius);
+      color: var(--third-color);
+      cursor: pointer;
+      span {
+        margin: 0 auto;
+      }
     }
   }
 `;

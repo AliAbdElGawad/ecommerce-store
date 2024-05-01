@@ -16,10 +16,10 @@ export default () => {
         window.getComputedStyle(body).getPropertyValue("padding-right")
       ) || 0;
 
-    html.style.position = "relative"; /* [1] */
-    html.style.overflow = "hidden"; /* [2] */
-    body.style.position = "relative"; /* [1] */
-    body.style.overflow = "hidden"; /* [2] */
+    html.style.position = "relative";
+    html.style.overflow = "hidden";
+    body.style.position = "relative";
+    body.style.overflow = "hidden";
     body.style.paddingRight = `${bodyPaddingRight + scrollBarWidth}px`;
 
     scrollBlocked.current = true;

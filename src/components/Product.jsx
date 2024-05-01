@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { AddToCart } from "../components";
+import { memo } from "react";
 
 const Product = ({ product }) => {
   const { category, image, title, description, price, rating, id } = product;
@@ -25,7 +26,7 @@ const Product = ({ product }) => {
   );
 };
 
-export default Product;
+export default memo(Product);
 
 const Wrapper = styled.div`
   display: flex;

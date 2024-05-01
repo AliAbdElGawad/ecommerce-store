@@ -52,6 +52,15 @@ a {
   }
 }
 
+.icons {
+  font-size: 36px;
+  color: var(--third-color);
+  cursor: pointer;
+  border: var(--border);
+  border-radius: var(--radius);
+  padding: 2px;
+}
+
 .container {
   width: 100%;
   display: inline-block;

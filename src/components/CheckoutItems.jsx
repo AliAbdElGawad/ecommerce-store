@@ -62,6 +62,9 @@ const Wrapper = styled.div`
     h2 {
       text-align: start;
     }
+    @media (max-width: 767px) {
+      font-size: 12px;
+    }
   }
   .amount-control {
     width: 33%;

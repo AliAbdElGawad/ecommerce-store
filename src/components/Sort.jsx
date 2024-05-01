@@ -33,5 +33,6 @@ const Wrapper = styled.div`
     -webkit-appearance: button;
     appearance: button;
     outline: none;
+    width: 100%;
   }
 `;

@@ -75,5 +75,15 @@ const Wrapper = styled.div`
       color: var(--secondary-color);
       font-weight: bold;
     }
+    select {
+      background-color: var(--primary-color);
+      color: white;
+      font-weight: bold;
+      border: none;
+      padding: 5px;
+      -webkit-appearance: button;
+      appearance: button;
+      outline: none;
+    }
   }
 `;

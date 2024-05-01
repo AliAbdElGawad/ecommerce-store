@@ -15,7 +15,7 @@ const Aside = () => {
         <h2>Filter by:</h2>
         <Filter />
         <Sort />
-        <Button onClick={resitHandler}>Resit</Button>
+        <Button onClick={resitHandler}>Reset</Button>
       </div>
     </Wrapper>
   );
