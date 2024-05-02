@@ -25,7 +25,7 @@ const Landing = () => {
 
 export default Landing;
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
   display: flex;
   justify-content: space-between;
   align-items: center;

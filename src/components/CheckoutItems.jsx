@@ -51,9 +51,13 @@ const Wrapper = styled.div`
   .img {
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 15%;
     img {
       width: 65%;
+      object-fit: contain;
+      aspect-ratio: 3/4;
+      mix-blend-mode: color-burn;
     }
   }
   .info {

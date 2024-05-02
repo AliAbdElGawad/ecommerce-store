@@ -1,4 +1,4 @@
-import { Header, Sidebar, Footer } from "./components";
+import { Header, Sidebar, Footer /* Profile*/ } from "./components";
 import {
   ProductsPage,
   About,
@@ -10,6 +10,10 @@ import {
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const App = () => {
+  /**
+   * TODO: add Profile page
+   * TODO: style the error page
+   */
   return (
     <main>
       <Router>
@@ -21,6 +25,7 @@ const App = () => {
           <Route path="/products" element={<ProductsPage />} />
           <Route path="/products/:id" element={<SingleProductPage />} />
           <Route path="/Checkout" element={<CheckoutPage />} />
+          {/* <Route path="/profile" element={<Profile />} /> */}
           <Route path="*" element={<ErrorPage />} />
         </Routes>
         <Footer />

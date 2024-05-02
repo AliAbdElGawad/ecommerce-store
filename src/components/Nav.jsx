@@ -1,13 +1,10 @@
-import { useAuth0 } from "@auth0/auth0-react";
 import { NavLink } from "react-router-dom";
 import { useStore } from "../contexts/StoreContext";
 import { NavLinks } from "../utils/constants";
 import styled from "styled-components";
-import { CgProfile } from "react-icons/cg";
 
 const Nav = () => {
   const { closeSideBar } = useStore();
-  const { loginWithRedirect } = useAuth0();
 
   return (
     <Wrapper>

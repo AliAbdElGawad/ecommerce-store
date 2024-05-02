@@ -6,7 +6,7 @@ import { CartProvider } from "./contexts/CartContext";
 import "./index.css";
 
 /**
- * TODO: auth0
+ * TODO: auth0 ===> Done
  */
 
 ReactDOM.createRoot(document.getElementById("root")).render(

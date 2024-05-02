@@ -17,6 +17,7 @@ import CheckoutItems from "./CheckoutItems";
 import FeaturedProducts from "./FeaturedProducts";
 import Featured from "./Featured";
 import OutsideClickDetector from "./OutsideClickDetector";
+import Profile from "./Profile";
 
 export {
   Header,
@@ -38,4 +39,5 @@ export {
   FeaturedProducts,
   Featured,
   OutsideClickDetector,
+  Profile,
 };

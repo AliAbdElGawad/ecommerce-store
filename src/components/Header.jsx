@@ -57,7 +57,7 @@ const Wrapper = styled.header`
   height: 60px;
   z-index: 999;
   .nav {
-    margin-left: auto;
+    margin: 0 auto;
     .bars {
       display: none;
       cursor: pointer;

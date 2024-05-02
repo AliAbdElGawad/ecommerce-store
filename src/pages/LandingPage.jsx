@@ -1,10 +1,10 @@
 import { FeaturedProducts, Landing } from "../components";
 const LandingPage = () => {
   return (
-    <section>
+    <div>
       <Landing />
       <FeaturedProducts />
-    </section>
+    </div>
   );
 };
 
