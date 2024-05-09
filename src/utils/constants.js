@@ -18,4 +18,6 @@ export const NavLinks = [
 ];
 
 export const productsURL = "https://fakestoreapi.com";
-// export const singleProductURL = "https://fakestoreapi.com/products";
+
+import landingBlob from "../assets/images/blob.svg";
+export default landingBlob;

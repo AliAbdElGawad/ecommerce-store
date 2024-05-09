@@ -44,6 +44,8 @@ const Wrapper = styled.footer`
     gap: 20px;
   }
   @media (max-width: 767px) {
+    gap: 20px;
+    flex-direction: column;
     .mid,
     .left {
       font-size: 12px;

@@ -38,8 +38,8 @@ const Header = () => {
             <CgProfile className="icons" onClick={() => loginWithRedirect()} />
           )}
         </div>
+        <CartItems />
       </div>
-      <CartItems />
     </Wrapper>
   );
 };
@@ -57,7 +57,6 @@ const Wrapper = styled.header`
   height: 60px;
   z-index: 999;
   .nav {
-    margin: 0 auto;
     .bars {
       display: none;
       cursor: pointer;
@@ -75,6 +74,9 @@ const Wrapper = styled.header`
     justify-content: space-between;
     align-items: center;
     gap: 5px;
+    @media (max-width: 767px) {
+      display: none;
+    }
     .profile {
       height: 36px;
     }

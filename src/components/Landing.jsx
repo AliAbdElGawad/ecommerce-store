@@ -2,10 +2,14 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Button } from "../components";
 import heroImg from "../assets/images/undraw_web_shopping_re_owap.svg";
+import landingBlob from "../utils/constants";
 
 const Landing = () => {
   return (
     <Wrapper className="container">
+      <div className="svg">
+        <img src={landingBlob} alt="hero" />
+      </div>
       <div className="text">
         <h1>Welcome to our Store!</h1>
         <p>
@@ -36,6 +40,17 @@ const Wrapper = styled.section`
   gap: 20px;
   @media (max-width: 767px) {
     flex-direction: column;
+  }
+  .svg {
+    position: absolute;
+    z-index: -3;
+
+    img {
+      width: 60rem;
+      @media (max-width: 991px) {
+        width: 25rem;
+      }
+    }
   }
   .text {
     display: flex;

@@ -12,7 +12,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 const App = () => {
   /**
    * TODO: add Profile page
-   * TODO: style the error page
    */
   return (
     <main>
